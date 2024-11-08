@@ -40,8 +40,8 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
+            btnMainToDaily = new Button();
+            btnMainToProfile = new Button();
             label1 = new Label();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -139,24 +139,24 @@
             Column5.Name = "Column5";
             Column5.Width = 150;
             // 
-            // button1
+            // btnMainToDaily
             // 
-            button1.Location = new Point(473, 90);
-            button1.Name = "button1";
-            button1.Size = new Size(151, 43);
-            button1.TabIndex = 13;
-            button1.Text = "Enter";
-            button1.UseVisualStyleBackColor = true;
+            btnMainToDaily.Location = new Point(473, 90);
+            btnMainToDaily.Name = "btnMainToDaily";
+            btnMainToDaily.Size = new Size(151, 43);
+            btnMainToDaily.TabIndex = 13;
+            btnMainToDaily.Text = "Enter";
+            btnMainToDaily.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnMainToProfile
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Location = new Point(22, 54);
-            button2.Name = "button2";
-            button2.Size = new Size(70, 62);
-            button2.TabIndex = 14;
-            button2.UseVisualStyleBackColor = true;
+            btnMainToProfile.BackgroundImage = (Image)resources.GetObject("btnMainToProfile.BackgroundImage");
+            btnMainToProfile.BackgroundImageLayout = ImageLayout.Stretch;
+            btnMainToProfile.Location = new Point(22, 54);
+            btnMainToProfile.Name = "btnMainToProfile";
+            btnMainToProfile.Size = new Size(70, 62);
+            btnMainToProfile.TabIndex = 14;
+            btnMainToProfile.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -183,8 +183,8 @@
             ClientSize = new Size(1190, 686);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnMainToProfile);
+            Controls.Add(btnMainToDaily);
             Controls.Add(dataGridView1);
             Controls.Add(lblProgress);
             Controls.Add(calendarTask);
@@ -212,8 +212,8 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private Button button1;
-        private Button button2;
+        private Button btnMainToDaily;
+        private Button btnMainToProfile;
         private Label label1;
         private Label label2;
     }

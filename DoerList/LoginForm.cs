@@ -24,7 +24,11 @@ namespace DoerList
 
             if (username == "User" && password == "password")
             {
-                MessageBox.Show("Login succesfully");
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+
+                
+                this.Close();
             }
             else
             {
@@ -34,8 +38,11 @@ namespace DoerList
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            RegistrationUI registrationUI = new RegistrationUI();
+            registrationUI.Show();
 
-
+            this.Close();
+          
         }
 
 
