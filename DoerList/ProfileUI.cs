@@ -21,7 +21,7 @@ namespace DoerList
         {
             //change profile
         }
-
+//comment ni idle
         private void BtnChangePass_Click(object sender, EventArgs e)
         {
             PassForm passForm = new PassForm();
