@@ -24,7 +24,7 @@ namespace DoerList
             string confirmPassword = txtBoxCfmPassword.Text;
 
 
-            if (username == null || password = null || confirmPassword == null)
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
             {
                 MessageBox.Show("All fields are required.");
                 return;
@@ -35,12 +35,14 @@ namespace DoerList
                 MessageBox.Show("Passwords do not match. Please try again.");
                 return;
             }
+
+     
+
             MessageBox.Show("Registration successful!");
 
-            
-            txtBoxUsername.Text = null;
-            txtBoxPassword.Text = null;
-            txtBoxCfmPassword.Text = null;
+            txtBoxUsername.Clear();
+            txtBoxPassword.Clear();
+            txtBoxCfmPassword.Clear();
         }
     }
 }

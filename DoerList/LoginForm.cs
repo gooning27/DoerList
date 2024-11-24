@@ -27,7 +27,7 @@ namespace DoerList
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
 
-                
+
                 this.Close();
             }
             else
@@ -36,20 +36,15 @@ namespace DoerList
             }
         }
 
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             RegistrationUI registrationUI = new RegistrationUI();
             registrationUI.Show();
 
             this.Close();
-          
+
         }
 
-
-
-
-
-
-
-
+    }
     }
