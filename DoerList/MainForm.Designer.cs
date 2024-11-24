@@ -29,67 +29,72 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            btnAddTask = new Button();
-            btnRemoveTask = new Button();
+            btnAddTaskMain = new Button();
+            btnRemoveTaskMain = new Button();
             progressBar = new ProgressBar();
-            calendarTask = new MonthCalendar();
+            monthCalendar = new MonthCalendar();
             lblProgress = new Label();
             btnMainToDaily = new Button();
             btnMainToProfile = new Button();
             label1 = new Label();
             label2 = new Label();
-            listView1 = new ListView();
+            listViewTask = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
             textBox1 = new TextBox();
             button1 = new Button();
-            button2 = new Button();
-            panel1 = new Panel();
+            btnClearAllMain = new Button();
+            lblPendingTasks = new Label();
             SuspendLayout();
             // 
-            // btnAddTask
+            // btnAddTaskMain
             // 
-            btnAddTask.Location = new Point(857, 172);
-            btnAddTask.Margin = new Padding(4, 5, 4, 5);
-            btnAddTask.Name = "btnAddTask";
-            btnAddTask.Size = new Size(107, 38);
-            btnAddTask.TabIndex = 2;
-            btnAddTask.Text = "Add Task";
-            btnAddTask.UseVisualStyleBackColor = true;
+            btnAddTaskMain.Location = new Point(900, 306);
+            btnAddTaskMain.Margin = new Padding(4, 5, 4, 5);
+            btnAddTaskMain.Name = "btnAddTaskMain";
+            btnAddTaskMain.Size = new Size(107, 38);
+            btnAddTaskMain.TabIndex = 2;
+            btnAddTaskMain.Text = "Add Task";
+            btnAddTaskMain.UseVisualStyleBackColor = true;
+            btnAddTaskMain.Click += btnAddTaskMain_Click;
             // 
-            // btnRemoveTask
+            // btnRemoveTaskMain
             // 
-            btnRemoveTask.Location = new Point(987, 172);
-            btnRemoveTask.Margin = new Padding(4, 5, 4, 5);
-            btnRemoveTask.Name = "btnRemoveTask";
-            btnRemoveTask.Size = new Size(124, 38);
-            btnRemoveTask.TabIndex = 3;
-            btnRemoveTask.Text = "Remove Task";
-            btnRemoveTask.UseVisualStyleBackColor = true;
+            btnRemoveTaskMain.Location = new Point(1030, 306);
+            btnRemoveTaskMain.Margin = new Padding(4, 5, 4, 5);
+            btnRemoveTaskMain.Name = "btnRemoveTaskMain";
+            btnRemoveTaskMain.Size = new Size(124, 38);
+            btnRemoveTaskMain.TabIndex = 3;
+            btnRemoveTaskMain.Text = "Remove Task";
+            btnRemoveTaskMain.UseVisualStyleBackColor = true;
+            btnRemoveTaskMain.Click += btnRemoveTaskMain_Click;
             // 
             // progressBar
             // 
-            progressBar.Location = new Point(808, 79);
+            progressBar.Location = new Point(843, 31);
             progressBar.Margin = new Padding(4, 5, 4, 5);
             progressBar.Name = "progressBar";
             progressBar.Size = new Size(298, 45);
             progressBar.TabIndex = 4;
             // 
-            // calendarTask
+            // monthCalendar
             // 
-            calendarTask.Location = new Point(127, 14);
-            calendarTask.Margin = new Padding(13, 15, 13, 15);
-            calendarTask.Name = "calendarTask";
-            calendarTask.TabIndex = 5;
+            monthCalendar.Location = new Point(127, 14);
+            monthCalendar.Margin = new Padding(13, 15, 13, 15);
+            monthCalendar.Name = "monthCalendar";
+            monthCalendar.TabIndex = 5;
             // 
             // lblProgress
             // 
+            lblProgress.AccessibleRole = AccessibleRole.None;
             lblProgress.AutoSize = true;
             lblProgress.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProgress.Location = new Point(788, 14);
+            lblProgress.Location = new Point(843, 90);
             lblProgress.Margin = new Padding(4, 0, 4, 0);
             lblProgress.Name = "lblProgress";
-            lblProgress.Size = new Size(350, 60);
+            lblProgress.Size = new Size(203, 60);
             lblProgress.TabIndex = 6;
-            lblProgress.Text = "Current Progress";
+            lblProgress.Text = "Progress:";
             // 
             // btnMainToDaily
             // 
@@ -99,6 +104,7 @@
             btnMainToDaily.TabIndex = 13;
             btnMainToDaily.Text = "Enter";
             btnMainToDaily.UseVisualStyleBackColor = true;
+            btnMainToDaily.Click += btnMainToDaily_Click;
             // 
             // btnMainToProfile
             // 
@@ -109,6 +115,7 @@
             btnMainToProfile.Size = new Size(70, 62);
             btnMainToProfile.TabIndex = 14;
             btnMainToProfile.UseVisualStyleBackColor = true;
+            btnMainToProfile.Click += btnMainToProfile_Click;
             // 
             // label1
             // 
@@ -128,13 +135,24 @@
             label2.TabIndex = 16;
             label2.Text = "Set Up Daily Task";
             // 
-            // listView1
+            // listViewTask
             // 
-            listView1.Location = new Point(545, 415);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(573, 204);
-            listView1.TabIndex = 17;
-            listView1.UseCompatibleStateImageBehavior = false;
+            listViewTask.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listViewTask.Location = new Point(581, 413);
+            listViewTask.Name = "listViewTask";
+            listViewTask.Size = new Size(573, 204);
+            listViewTask.TabIndex = 17;
+            listViewTask.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Task";
+            columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Due Date";
+            columnHeader2.Width = 150;
             // 
             // textBox1
             // 
@@ -153,64 +171,74 @@
             button1.Size = new Size(51, 53);
             button1.TabIndex = 19;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // button2
+            // btnClearAllMain
             // 
-            button2.Location = new Point(994, 352);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 20;
-            button2.Text = "Clear All task";
-            button2.UseVisualStyleBackColor = true;
+            btnClearAllMain.Location = new Point(1042, 363);
+            btnClearAllMain.Name = "btnClearAllMain";
+            btnClearAllMain.Size = new Size(112, 34);
+            btnClearAllMain.TabIndex = 20;
+            btnClearAllMain.Text = "Clear All task";
+            btnClearAllMain.UseVisualStyleBackColor = true;
+            btnClearAllMain.Click += btnClearAllMain_Click;
             // 
-            // panel1
+            // lblPendingTasks
             // 
-            panel1.Location = new Point(54, 326);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(300, 150);
-            panel1.TabIndex = 21;
+            lblPendingTasks.AccessibleRole = AccessibleRole.None;
+            lblPendingTasks.AutoSize = true;
+            lblPendingTasks.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPendingTasks.Location = new Point(831, 178);
+            lblPendingTasks.Margin = new Padding(4, 0, 4, 0);
+            lblPendingTasks.Name = "lblPendingTasks";
+            lblPendingTasks.Size = new Size(306, 60);
+            lblPendingTasks.TabIndex = 21;
+            lblPendingTasks.Text = "Pending Tasks:";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1190, 686);
-            Controls.Add(panel1);
-            Controls.Add(button2);
+            Controls.Add(lblPendingTasks);
+            Controls.Add(btnClearAllMain);
             Controls.Add(button1);
             Controls.Add(textBox1);
-            Controls.Add(listView1);
+            Controls.Add(listViewTask);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnMainToProfile);
             Controls.Add(btnMainToDaily);
             Controls.Add(lblProgress);
-            Controls.Add(calendarTask);
+            Controls.Add(monthCalendar);
             Controls.Add(progressBar);
-            Controls.Add(btnRemoveTask);
-            Controls.Add(btnAddTask);
+            Controls.Add(btnRemoveTaskMain);
+            Controls.Add(btnAddTaskMain);
             Margin = new Padding(4, 5, 4, 5);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DoerList";
+            Load += MainForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button btnAddTask;
-        private Button btnRemoveTask;
+        private Button btnAddTaskMain;
+        private Button btnRemoveTaskMain;
         private ProgressBar progressBar;
-        private MonthCalendar calendarTask;
+        private MonthCalendar monthCalendar;
         private Label lblProgress;
         private Button btnMainToDaily;
         private Button btnMainToProfile;
         private Label label1;
         private Label label2;
-        private ListView listView1;
+        private ListView listViewTask;
         private TextBox textBox1;
         private Button button1;
-        private Button button2;
-        private Panel panel1;
+        private Button btnClearAllMain;
+        private Label lblPendingTasks;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
     }
 }

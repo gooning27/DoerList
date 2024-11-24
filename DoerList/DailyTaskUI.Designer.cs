@@ -42,6 +42,12 @@ namespace DoerList
             listBoxTasks = new ListBox();
             chkDaily = new CheckBox();
             btnReloadDailyTasks = new Button();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            textBox2 = new TextBox();
+            label4 = new Label();
+            comboBox2 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
@@ -66,7 +72,7 @@ namespace DoerList
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(36, 158);
+            dateTimePicker1.Location = new Point(595, 33);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(300, 31);
             dateTimePicker1.TabIndex = 2;
@@ -74,21 +80,21 @@ namespace DoerList
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(861, 33);
+            comboBox1.Location = new Point(957, 38);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(183, 33);
             comboBox1.TabIndex = 3;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(863, 97);
+            numericUpDown1.Location = new Point(959, 102);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(180, 31);
             numericUpDown1.TabIndex = 4;
             // 
             // txtTask
             // 
-            txtTask.Location = new Point(476, 148);
+            txtTask.Location = new Point(712, 102);
             txtTask.Margin = new Padding(4, 5, 4, 5);
             txtTask.Name = "txtTask";
             txtTask.Size = new Size(141, 31);
@@ -131,7 +137,7 @@ namespace DoerList
             // 
             listBoxTasks.FormattingEnabled = true;
             listBoxTasks.ItemHeight = 25;
-            listBoxTasks.Location = new Point(36, 240);
+            listBoxTasks.Location = new Point(42, 304);
             listBoxTasks.Margin = new Padding(4, 5, 4, 5);
             listBoxTasks.Name = "listBoxTasks";
             listBoxTasks.Size = new Size(300, 204);
@@ -140,7 +146,7 @@ namespace DoerList
             // chkDaily
             // 
             chkDaily.AutoSize = true;
-            chkDaily.Location = new Point(476, 214);
+            chkDaily.Location = new Point(712, 143);
             chkDaily.Margin = new Padding(4, 5, 4, 5);
             chkDaily.Name = "chkDaily";
             chkDaily.Size = new Size(121, 29);
@@ -159,11 +165,67 @@ namespace DoerList
             btnReloadDailyTasks.UseVisualStyleBackColor = true;
             btnReloadDailyTasks.Click += btnReloadDailyTasks_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(259, 38);
+            label2.Name = "label2";
+            label2.Size = new Size(101, 25);
+            label2.TabIndex = 12;
+            label2.Text = "Task Name:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(366, 36);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 31);
+            textBox1.TabIndex = 13;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(254, 105);
+            label3.Name = "label3";
+            label3.Size = new Size(106, 25);
+            label3.TabIndex = 14;
+            label3.Text = "Description:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(366, 102);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(183, 63);
+            textBox2.TabIndex = 15;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(283, 204);
+            label4.Name = "label4";
+            label4.Size = new Size(77, 25);
+            label4.TabIndex = 16;
+            label4.Text = "Priority: ";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(366, 201);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(183, 33);
+            comboBox2.TabIndex = 17;
+            // 
             // DailyTaskUI
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1186, 632);
+            Controls.Add(comboBox2);
+            Controls.Add(label4);
+            Controls.Add(textBox2);
+            Controls.Add(label3);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
             Controls.Add(btnReloadDailyTasks);
             Controls.Add(chkDaily);
             Controls.Add(listBoxTasks);
@@ -198,5 +260,11 @@ namespace DoerList
         private ListBox listBoxTasks;
         private CheckBox chkDaily;
         private Button btnReloadDailyTasks;
+        private Label label2;
+        private TextBox textBox1;
+        private Label label3;
+        private TextBox textBox2;
+        private Label label4;
+        private ComboBox comboBox2;
     }
 }
