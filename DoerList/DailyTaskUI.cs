@@ -16,5 +16,28 @@ namespace DoerList
         {
             InitializeComponent();
         }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+        }
+        private void btnRemoveAll_Click(object sender, EventArgs e)
+        {
+        }
+        private void btnReloadDailyTasks_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void listBoxTasks_Click(object sender, EventArgs e)
+        {
+        }
+        private void chkDaily_Click(object sender, EventArgs e)
+        {
+        }
+
+
+
     }
-}
+   }

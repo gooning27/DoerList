@@ -34,22 +34,20 @@
             progressBar = new ProgressBar();
             calendarTask = new MonthCalendar();
             lblProgress = new Label();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
             btnMainToDaily = new Button();
             btnMainToProfile = new Button();
             label1 = new Label();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            listView1 = new ListView();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            button2 = new Button();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // btnAddTask
             // 
-            btnAddTask.Location = new Point(788, 291);
+            btnAddTask.Location = new Point(857, 172);
             btnAddTask.Margin = new Padding(4, 5, 4, 5);
             btnAddTask.Name = "btnAddTask";
             btnAddTask.Size = new Size(107, 38);
@@ -59,7 +57,7 @@
             // 
             // btnRemoveTask
             // 
-            btnRemoveTask.Location = new Point(918, 291);
+            btnRemoveTask.Location = new Point(987, 172);
             btnRemoveTask.Margin = new Padding(4, 5, 4, 5);
             btnRemoveTask.Name = "btnRemoveTask";
             btnRemoveTask.Size = new Size(124, 38);
@@ -69,7 +67,7 @@
             // 
             // progressBar
             // 
-            progressBar.Location = new Point(712, 79);
+            progressBar.Location = new Point(808, 79);
             progressBar.Margin = new Padding(4, 5, 4, 5);
             progressBar.Name = "progressBar";
             progressBar.Size = new Size(298, 45);
@@ -86,58 +84,12 @@
             // 
             lblProgress.AutoSize = true;
             lblProgress.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProgress.Location = new Point(692, 14);
+            lblProgress.Location = new Point(788, 14);
             lblProgress.Margin = new Padding(4, 0, 4, 0);
             lblProgress.Name = "lblProgress";
             lblProgress.Size = new Size(350, 60);
             lblProgress.TabIndex = 6;
             lblProgress.Text = "Current Progress";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(41, 351);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1001, 138);
-            dataGridView1.TabIndex = 7;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Category";
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Description";
-            Column2.MinimumWidth = 8;
-            Column2.Name = "Column2";
-            Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Start Date";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "End Date";
-            Column4.MinimumWidth = 8;
-            Column4.Name = "Column4";
-            Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Status";
-            Column5.MinimumWidth = 8;
-            Column5.Name = "Column5";
-            Column5.Width = 150;
             // 
             // btnMainToDaily
             // 
@@ -176,16 +128,62 @@
             label2.TabIndex = 16;
             label2.Text = "Set Up Daily Task";
             // 
+            // listView1
+            // 
+            listView1.Location = new Point(545, 415);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(573, 204);
+            listView1.TabIndex = 17;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(545, 326);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 31);
+            textBox1.TabIndex = 18;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(701, 315);
+            button1.Name = "button1";
+            button1.Size = new Size(51, 53);
+            button1.TabIndex = 19;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(994, 352);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 20;
+            button2.Text = "Clear All task";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(54, 326);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(300, 150);
+            panel1.TabIndex = 21;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1190, 686);
+            Controls.Add(panel1);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
+            Controls.Add(listView1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnMainToProfile);
             Controls.Add(btnMainToDaily);
-            Controls.Add(dataGridView1);
             Controls.Add(lblProgress);
             Controls.Add(calendarTask);
             Controls.Add(progressBar);
@@ -195,7 +193,6 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DoerList";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,15 +203,14 @@
         private ProgressBar progressBar;
         private MonthCalendar calendarTask;
         private Label lblProgress;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private Button btnMainToDaily;
         private Button btnMainToProfile;
         private Label label1;
         private Label label2;
+        private ListView listView1;
+        private TextBox textBox1;
+        private Button button1;
+        private Button button2;
+        private Panel panel1;
     }
 }
